@@ -1,0 +1,212 @@
+/* General Styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Navbar Styles */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #2e7d32;
+    padding: 15px 20px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.navbar .logo {
+    display: flex;
+    align-items: center;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 5px; /* Adds padding to prevent touching the navbar */
+}
+
+.navbar .logo img {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+}
+
+.menu-icon {
+    display: block;
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    position: relative;
+    padding-right: 20px; /* Ensures menu does not touch right margin */
+}
+
+.nav-links li {
+    position: relative;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    padding: 6px 10px;
+    transition: background-color 0.3s ease;
+}
+
+.nav-links a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+}
+
+/* Dropdown Menu */
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #2e7d32;
+    min-width: 150px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    flex-direction: column;
+}
+
+.dropdown-menu.show {
+    display: flex;
+}
+
+.dropdown-menu li {
+    display: block;
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 10px;
+    text-align: left;
+}
+
+/* Responsive Navigation */
+@media (max-width: 768px) {
+    .menu-icon {
+        display: block;
+    }
+
+    .navbar .logo {
+        position: relative;
+        left: 10px;
+        top: auto;
+        transform: none;
+        padding: 5px; /* Ensures spacing on mobile view */
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background-color: #2e7d32;
+        padding: 10px 20px;
+    }
+
+    .nav-links.active {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: absolute;
+        width: 100%;
+        left: 0;
+        top: 60px;
+        background-color: #2e7d32;
+        padding: 10px 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    }
+
+    .nav-links a {
+        text-align: center;
+        width: 100%;
+        padding: 15px;
+    }
+
+    .dropdown-menu {
+        position: relative;
+        width: 100%;
+    }
+}
+
+/* Content Styling */
+.title {
+    text-align: center;
+    color: #33691e;
+    margin-top: 90px;
+    text-transform: uppercase;
+}
+
+.tables-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+}
+
+/* Table Styling */
+table {
+    width: 75%;
+    border-collapse: collapse;
+    margin-bottom: 40px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+}
+
+table th, table td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+table th {
+    background-color: #43a047;
+    color: white;
+}
+
+table tr:nth-child(even) {
+    background-color: #f1f8e9;
+}
+
+table tr:hover {
+    background-color: #e8f5e9;
+}
+
+.tables-container table caption {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #ffffff;
+    background-color: #43a047;
+    padding: 6px;
+    border-radius: 8px 8px 0 0;
+    text-align: center;
+    margin-bottom: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    letter-spacing: 1.5px;
+}
